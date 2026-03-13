@@ -66,10 +66,11 @@ const TECHS = [
   { name: 'HTML',          img: '/images/html.png' },
   { name: 'CSS',           img: '/images/css.png' },
   { name: 'JavaScript',    img: '/images/javascript.png' },
+  { name: 'Code Ignitter', img: '/images/ci.png' },
+  { name: 'Laravel',       img: '/images/laravel.png' },
   { name: 'React',         img: '/images/react.png' },
   { name: 'Python',        img: '/images/python.png' },
   { name: 'Node.js',       img: '/images/node.png' },
-  { name: 'Laravel',       img: '/images/laravel.png' },
   { name: 'TailwindCSS',   img: '/images/tailwind.png' },
   { name: 'MySQL',         img: '/images/mysql.png' },
   { name: 'Figma',         img: '/images/figma.png' },
@@ -78,6 +79,7 @@ const TECHS = [
   { name: 'C',             img: '/images/C.png' },
   { name: 'Firebase',      img: '/images/firebase.png' },
   { name: 'Google Collab', img: '/images/collab.png' },
+
 ]
 
 // ===== TYPEWRITER HOOK =====
