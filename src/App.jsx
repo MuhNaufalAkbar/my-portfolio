@@ -5,7 +5,7 @@ import './App.css'
 const PROJECTS = [
   {
     title: 'PKU Muhammadyah Bantul - Aplikasi berbasis web untuk pengingat minum obat pada pengidap penyakit Tuberkulosis',
-    role: 'Fullstack Developer',
+    roles: ['Fullstack Developer'],
     desc: 'Aplikasi web pengingat minum obat untuk pasien Tuberkulosis dengan fitur notifikasi dan monitoring.',
     detail: 'Aplikasi ini dikembangkan untuk membantu pasien Tuberkulosis di PKU Muhammadiyah Bantul dalam mengelola jadwal minum obat. Fitur utama meliputi notifikasi pengingat otomatis, dashboard monitoring kepatuhan pasien, manajemen data pasien oleh tenaga medis, serta laporan progress pengobatan. Dibangun menggunakan Laravel sebagai backend framework dengan database MySQL dan tampilan antarmuka yang responsif.',
     tech: ['Laravel', 'PHP', 'MySQL'],
@@ -14,7 +14,7 @@ const PROJECTS = [
   },
   {
     title: 'PersonaWay - Understand Yourself, Empower Your Future',
-    role: 'Backend Developer',
+    roles: ['Backend Developer'],
     desc: 'Aplikasi berbasis AI untuk memahami kepribadian dan potensi diri pengguna.',
     detail: 'PersonaWay adalah aplikasi berbasis kecerdasan buatan yang membantu pengguna memahami kepribadian dan potensi diri mereka. Saya bertanggung jawab dalam membangun backend menggunakan Flask Python, mengintegrasikan layanan Google Cloud Platform untuk deployment dan skalabilitas, serta mengelola database menggunakan Cloud SQL dan Firebase Firestore untuk data realtime.',
     tech: ['Flask', 'Python', 'Google Cloud Platform', 'Google Cloud Run', 'Firebase', 'Google Cloud Firestore', 'Cloud SQL'],
@@ -23,7 +23,7 @@ const PROJECTS = [
   },
   {
     title: 'Segmentasi UMKM Yogyakarta Menggunakan K-Means & Analisis Median dan Mean untuk Perencanaan Strategi Pemasaran Digital',
-    role: 'Data Analyst',
+    roles: ['Data Analyst'],
     desc: 'Segmentasi UMKM menggunakan algoritma K-Means clustering dengan analisis statistik mendalam.',
     detail: 'Proyek analisis data ini bertujuan mengelompokkan UMKM di Yogyakarta menggunakan algoritma K-Means Clustering. Analisis mencakup preprocessing data, penentuan jumlah cluster optimal menggunakan Elbow Method, serta interpretasi hasil clustering berdasarkan analisis median dan mean untuk merumuskan strategi pemasaran digital yang tepat bagi masing-masing segmen UMKM. Visualisasi interaktif dibangun menggunakan Streamlit.',
     tech: ['Google Collab', 'Streamlit', 'Python', 'CSS'],
@@ -31,17 +31,17 @@ const PROJECTS = [
     repo: '#'
   },
   {
-    title: 'Student Employee',
-    role: 'Graphic Design',
+    title: 'Work as A Student Employee',
+    roles: ['Graphic Design', 'Journal Manager', 'Study Program Administration'],
     desc: 'Desain grafis untuk keperluan promosi dan media sosial organisasi kampus.',
     detail: 'Sebagai Student Employee, saya bertugas membuat berbagai materi desain grafis untuk keperluan promosi, konten media sosial, poster acara, dan branding organisasi kampus. Semua desain dibuat menggunakan Canva dengan memperhatikan identitas visual yang konsisten, menarik, dan sesuai target audiens.',
-    tech: ['Canva'],
+    tech: ['Canva', 'Wordpress', 'Microsoft Office'],
     img: '/images/design.png',
     repo: '#'
   },
   {
     title: 'UI / UX : Aplikasi berbasis web untuk pengingat minum obat pada pengidap penyakit Tuberkulosis',
-    role: 'UI UX DESIGNER',
+    roles: ['UI UX DESIGNER'],
     desc: 'Desain antarmuka aplikasi pengingat minum obat yang intuitif dan mudah digunakan.',
     detail: 'Perancangan UI/UX untuk aplikasi pengingat minum obat pasien Tuberkulosis. Proses desain dimulai dari riset pengguna, pembuatan user persona, user flow, wireframe, hingga high-fidelity prototype menggunakan Figma. Desain mengutamakan kemudahan penggunaan bagi pasien yang mungkin kurang familiar dengan teknologi, dengan tampilan bersih dan navigasi yang intuitif.',
     tech: ['Figma'],
@@ -201,7 +201,9 @@ function ProjectTabs() {
                 </div>
                 <div className="pcard-body">
                   <h3 className="pcard-title">{p.title}</h3>
-                  <span className={`pcard-role pcard-role--${p.role.toLowerCase().replace(/ /g, '-')}`}>{p.role}</span>
+                  <span className={`pcard-role-wrap`}>
+                    {p.roles.map(r => <span key={r} className={`pcard-role pcard-role--${r.toLowerCase().replace(/ /g, '-')}`}>{r}</span>)}
+                  </span>
                   <p className="pcard-desc">{p.desc}</p>
                   <div className="pcard-techs">{p.tech.map(t => <span key={t} className="pcard-tech">{t}</span>)}</div>
                   <div className="pcard-actions">
@@ -244,9 +246,9 @@ function ProjectTabs() {
             {/* Isi modal */}
             <div className="cert-modal-body">
               {/* Role badge sebagai pengganti "issuer · year" */}
-              <span className={`cert-modal-issuer pcard-role pcard-role--${selectedProject.role.toLowerCase().replace(/ /g, '-')}`}>
-                {selectedProject.role}
-              </span>
+              <div className="pcard-role-wrap" style={{marginBottom:'14px'}}>
+                {selectedProject.roles.map(r => <span key={r} className={`pcard-role pcard-role--${r.toLowerCase().replace(/ /g, '-')}`}>{r}</span>)}
+              </div>
               <h3 className="cert-modal-title">{selectedProject.title}</h3>
               <p className="cert-modal-desc">{selectedProject.detail}</p>
               {/* Tech stack */}
@@ -381,7 +383,7 @@ function App() {
             <div className="about-stats">
               <div className="stat"><span className="stat-num">3.5</span><span className="stat-label">Years Learning</span></div>
               <div className="stat-divider"/>
-              <div className="stat"><span className="stat-num">10+</span><span className="stat-label">Projects Done</span></div>
+              <div className="stat"><span className="stat-num">5</span><span className="stat-label">Projects Done</span></div>
               <div className="stat-divider"/>
               <div className="stat"><span className="stat-num">UAD</span><span className="stat-label">Informatics</span></div>
             </div>
