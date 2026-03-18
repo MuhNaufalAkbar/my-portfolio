@@ -378,18 +378,36 @@ body::before {
 .pcard-desc  { font-size:13px; color:rgba(255,255,255,0.5); line-height:1.65; margin:0 0 14px; }
 .pcard-techs { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px; }
 .pcard-tech  { font-size:11px; font-weight:600; padding:3px 10px; border-radius:999px; background:rgba(29,78,216,.12); border:1px solid rgba(29,78,216,.3); color:#7dd3fc; }
-.pcard-actions { display:flex; gap:8px; }
+.pcard-actions { display:flex; gap:8px; flex-wrap:wrap; }
+
+/* Base tombol — ukuran & bentuk identik */
 .pcard-btn {
-  display:flex; align-items:center; gap:5px; padding:8px 16px;
-  border-radius:8px; font-size:12px; font-weight:600;
-  text-decoration:none; transition:all 200ms ease; cursor:pointer; border:none;
+  display:inline-flex; align-items:center; justify-content:center; gap:5px;
+  padding:8px 18px; border-radius:999px;
+  font-size:12px; font-weight:700; letter-spacing:.3px;
+  text-decoration:none; transition:all 200ms ease; cursor:pointer;
+  white-space:nowrap; flex:1;
 }
-/* Hanya satu tombol — Details */
-.pcard-btn--detail {
-  background:rgba(29,78,216,.2); color:#7dd3fc;
+
+/* Details — biru */
+.pcard-btn--repo {
+  background:rgba(29,78,216,.18); color:#7dd3fc;
   border:1px solid rgba(29,78,216,.35);
 }
-.pcard-btn--detail:hover { background:rgba(29,78,216,.4); color:#bae6fd; }
+.pcard-btn--repo:hover {
+  background:rgba(29,78,216,.35); color:#bae6fd;
+  transform:translateY(-1px); box-shadow:0 4px 14px rgba(29,78,216,.25);
+}
+
+/* Live Demo — hijau */
+.pcard-btn--live {
+  background:rgba(16,185,129,.12); color:#34d399;
+  border:1px solid rgba(16,185,129,.32);
+}
+.pcard-btn--live:hover {
+  background:rgba(16,185,129,.26); color:#6ee7b7;
+  transform:translateY(-1px); box-shadow:0 4px 14px rgba(16,185,129,.2);
+}
 
 /* =====================
    PROJECT MODAL
@@ -482,6 +500,20 @@ body::before {
 .cert-modal-issuer { font-size:12px; font-weight:700; color:#38bdf8; letter-spacing:.8px; text-transform:uppercase; display:block; margin-bottom:10px; }
 .cert-modal-title  { font-size:18px; font-weight:800; color:#fff; margin:0 0 12px; line-height:1.35; }
 .cert-modal-desc   { font-size:14px; color:rgba(255,255,255,.6); line-height:1.75; margin:0; }
+
+/* Live Demo button di dalam modal */
+.cert-modal-live-btn {
+  display:inline-flex; align-items:center; gap:8px;
+  margin-top:20px; padding:11px 24px; border-radius:10px;
+  font-size:13px; font-weight:700; text-decoration:none;
+  background:rgba(16,185,129,.15); color:#34d399;
+  border:1px solid rgba(16,185,129,.3);
+  transition:all 250ms ease;
+}
+.cert-modal-live-btn:hover {
+  background:rgba(16,185,129,.28); color:#6ee7b7;
+  transform:translateY(-2px); box-shadow:0 8px 24px rgba(16,185,129,.2);
+}
 
 /* =====================
    TECH STACK

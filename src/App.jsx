@@ -10,7 +10,8 @@ const PROJECTS = [
     detail: 'Aplikasi ini dikembangkan untuk membantu pasien Tuberkulosis di PKU Muhammadiyah Bantul dalam mengelola jadwal minum obat. Fitur utama meliputi notifikasi pengingat otomatis, dashboard monitoring kepatuhan pasien, manajemen data pasien oleh tenaga medis, serta laporan progress pengobatan. Dibangun menggunakan Laravel sebagai backend framework dengan database MySQL dan tampilan antarmuka yang responsif.',
     tech: ['Laravel', 'PHP', 'MySQL'],
     img: '/images/tuberkulosis.png',
-    repo: '#'
+    repo: 'https://github.com/MuhNaufalAkbar/pku-bantul',       // ← isi link GitHub di sini
+    demo: 'https://pku-bantul.up.railway.app/',       // ← isi link Live Demo di sini
   },
   {
     title: 'PersonaWay - Understand Yourself, Empower Your Future',
@@ -19,7 +20,8 @@ const PROJECTS = [
     detail: 'PersonaWay adalah aplikasi berbasis kecerdasan buatan yang membantu pengguna memahami kepribadian dan potensi diri mereka. Saya bertanggung jawab dalam membangun backend menggunakan Flask Python, mengintegrasikan layanan Google Cloud Platform untuk deployment dan skalabilitas, serta mengelola database menggunakan Cloud SQL dan Firebase Firestore untuk data realtime.',
     tech: ['Flask', 'Python', 'Google Cloud Platform', 'Google Cloud Run', 'Firebase', 'Google Cloud Firestore', 'Cloud SQL'],
     img: '/images/personaway.png',
-    repo: '#'
+    repo: '',       // ← isi link GitHub di sini
+    demo: '',       // ← isi link Live Demo di sini
   },
   {
     title: 'Segmentasi UMKM Yogyakarta Menggunakan K-Means & Analisis Median dan Mean untuk Perencanaan Strategi Pemasaran Digital',
@@ -28,7 +30,8 @@ const PROJECTS = [
     detail: 'Proyek analisis data ini bertujuan mengelompokkan UMKM di Yogyakarta menggunakan algoritma K-Means Clustering. Analisis mencakup preprocessing data, penentuan jumlah cluster optimal menggunakan Elbow Method, serta interpretasi hasil clustering berdasarkan analisis median dan mean untuk merumuskan strategi pemasaran digital yang tepat bagi masing-masing segmen UMKM. Visualisasi interaktif dibangun menggunakan Streamlit.',
     tech: ['Google Collab', 'Streamlit', 'Python', 'CSS'],
     img: '/images/segmentasi.png',
-    repo: '#'
+    repo: '',       // ← isi link GitHub di sini
+    demo: '',       // ← isi link Live Demo di sini
   },
   {
     title: 'Work as A Student Employee',
@@ -37,7 +40,8 @@ const PROJECTS = [
     detail: 'Sebagai Student Employee, saya bertugas membuat berbagai materi desain grafis untuk keperluan promosi, konten media sosial, poster acara, dan branding organisasi kampus. Semua desain dibuat menggunakan Canva dengan memperhatikan identitas visual yang konsisten, menarik, dan sesuai target audiens.',
     tech: ['Canva', 'Wordpress', 'Microsoft Office'],
     img: '/images/design.png',
-    repo: '#'
+    repo: '',       // ← isi link GitHub di sini
+    demo: '',       // ← isi link Live Demo di sini
   },
   {
     title: 'UI / UX : Aplikasi berbasis web untuk pengingat minum obat pada pengidap penyakit Tuberkulosis',
@@ -46,7 +50,8 @@ const PROJECTS = [
     detail: 'Perancangan UI/UX untuk aplikasi pengingat minum obat pasien Tuberkulosis. Proses desain dimulai dari riset pengguna, pembuatan user persona, user flow, wireframe, hingga high-fidelity prototype menggunakan Figma. Desain mengutamakan kemudahan penggunaan bagi pasien yang mungkin kurang familiar dengan teknologi, dengan tampilan bersih dan navigasi yang intuitif.',
     tech: ['Figma'],
     img: '/images/uiux.png',
-    repo: '#'
+    repo: '',       // ← isi link GitHub di sini
+    demo: '',       // ← isi link Live Demo di sini
   },
 ]
 
@@ -66,11 +71,10 @@ const TECHS = [
   { name: 'HTML',          img: '/images/html.png' },
   { name: 'CSS',           img: '/images/css.png' },
   { name: 'JavaScript',    img: '/images/javascript.png' },
-  { name: 'Code Ignitter', img: '/images/ci.png' },
-  { name: 'Laravel',       img: '/images/laravel.png' },
   { name: 'React',         img: '/images/react.png' },
   { name: 'Python',        img: '/images/python.png' },
   { name: 'Node.js',       img: '/images/node.png' },
+  { name: 'Laravel',       img: '/images/laravel.png' },
   { name: 'TailwindCSS',   img: '/images/tailwind.png' },
   { name: 'MySQL',         img: '/images/mysql.png' },
   { name: 'Figma',         img: '/images/figma.png' },
@@ -79,7 +83,6 @@ const TECHS = [
   { name: 'C',             img: '/images/C.png' },
   { name: 'Firebase',      img: '/images/firebase.png' },
   { name: 'Google Collab', img: '/images/collab.png' },
-
 ]
 
 // ===== TYPEWRITER HOOK =====
@@ -213,6 +216,12 @@ function ProjectTabs() {
                       Details
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                     </button>
+                    {p.demo && (
+                      <a href={p.demo} target="_blank" rel="noopener noreferrer" className="pcard-btn pcard-btn--live">
+                        Live Demo
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
@@ -257,6 +266,13 @@ function ProjectTabs() {
               <div className="pcard-techs" style={{ marginTop: '16px' }}>
                 {selectedProject.tech.map(t => <span key={t} className="pcard-tech">{t}</span>)}
               </div>
+              {/* Tombol Live Demo di modal — hanya muncul kalau link diisi */}
+              {selectedProject.demo && (
+                <a href={selectedProject.demo} target="_blank" rel="noopener noreferrer" className="cert-modal-live-btn">
+                  Live Demo
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>
+                </a>
+              )}
             </div>
           </div>
         </div>
