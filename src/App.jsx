@@ -285,7 +285,7 @@ function ProjectTabs() {
 function App() {
   const touchStartY = useRef(null)
   const [menuOpen, setMenuOpen] = useState(false)
-  const typed = useTypewriter(['Junior Fullstack Developer Enthusiast'])
+  const typed = useTypewriter(['Front End Developer Enthusiast', 'Junior Fullstack Developer Enthusiast'])
 
   useEffect(() => {
     const scrollByPage = (dir) => window.scrollBy({ top: dir * window.innerHeight, behavior: 'smooth' })
@@ -389,7 +389,7 @@ function App() {
             <h1 className="about-name">MUHAMMAD<br />NAUFAL AKBAR</h1>
             <div className="about-role-row">
               <span className="role-line" />
-              <span className="about-role">Fullstack Developer</span>
+              <span className="about-role">Front End Developer • Junior Fullstack Developer</span>
             </div>
             <p className="lead">
               An undergraduate Informatics student at <strong>Universitas Ahmad Dahlan</strong> — responsible, disciplined, and resilient.
