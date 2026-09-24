@@ -11,7 +11,7 @@ const PROJECTS = [
     tech: ['Laravel', 'PHP', 'MySQL'],
     img: '/images/tuberkulosis.png',
     repo: 'https://github.com/MuhNaufalAkbar/pku-bantul',       // ← isi link GitHub di sini
-    demo: 'https://pku-bantul.up.railway.app/',       // ← isi link Live Demo di sini
+    demo: 'https://tbc-care.vercel.app/',       // ← isi link Live Demo di sini
   },
   {
     title: 'PersonaWay - Understand Yourself, Empower Your Future',
